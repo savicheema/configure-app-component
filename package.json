@@ -1,0 +1,52 @@
+{
+  "name": "@savicheema/configure-app-component",
+  "version": "0.1.0",
+  "description": "Configure app component for PWAs to setup for client's use cases.",
+  "keywords": [
+    "configure",
+    "PWA",
+    "service",
+    "worker",
+    "notifications",
+    "push"
+  ],
+  "homepage": "https://github.com/savicheema/configure-app-component#readme",
+  "bugs": {
+    "url": "https://github.com/savicheema/configure-app-component/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savicheema/configure-app-component.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "dist/index.mjs",
+  "source": "src/index.tsx",
+  "types": "dist/types.d.ts",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "rimraf dist && parcel build",
+    "test": "vitest",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@parcel/packager-ts": "^2.16.0",
+    "@parcel/transformer-typescript-types": "^2.16.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.1",
+    "@vitest/browser": "^3.2.4",
+    "husky": "^8.0.0",
+    "parcel": "^2.16.0",
+    "playwright": "^1.56.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4",
+    "vitest-browser-react": "^1.0.1"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0"
+  }
+}
