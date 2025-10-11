@@ -1,0 +1,1 @@
+# configure-app-component
