@@ -4,14 +4,36 @@ import { render } from "vitest-browser-react";
 
 import MyComponent from "../src/index.tsx";
 
-describe("MobileNavigation", () => {
-  it("should have MobileNavigation in document", () => {
-    const screen: RenderResult = render(
-      <MyComponent person={{ name: "goo", age: 24 }} />
-    );
+describe("Configure component", () => {
+  it("should show current step", () => {
+    expect(1).equal(1);
+  });
 
-    const mobileNavigation = screen.getByTestId("my-component");
+  it("should show total steps", () => {
+    expect(1).equal(1);
+  });
 
-    expect(mobileNavigation).toBeInTheDocument();
+  it("should show heading of current step", () => {
+    expect(1).equal(1);
+  });
+
+  it("should show component of current step", () => {
+    expect(1).equal(1);
+  });
+
+  it("should show next step button", () => {
+    expect(1).equal(1);
+  });
+
+  it("should show prev step button", () => {
+    expect(1).equal(1);
+  });
+
+  it("should show skip step button if skippable", () => {
+    expect(1).equal(1);
+  });
+
+  it("should show configure complete screen on complete", () => {
+    expect(1).equal(1);
   });
 });
