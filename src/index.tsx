@@ -35,7 +35,6 @@ const useConfigureStepsHook = () => {
   function unloadEvenHandler(e: BeforeUnloadEvent) {
     e.preventDefault();
 
-    configureLog("hey");
     e.returnValue = true;
   }
 
@@ -70,6 +69,7 @@ export type ConfigStepType = {
   onNext?: () => boolean;
   onPrev?: () => boolean;
   isSkip?: boolean;
+  serial?: number;
 };
 
 const Frame = ({ frame }: { frame: JSX.Element }) => {
@@ -321,6 +321,14 @@ const ConfigComponent = ({ steps }: { steps: ConfigStepType[] }) => {
 
   configureStepsRef.current.maxSteps = steps?.length;
 
+  const stepSort = (step1: ConfigStepType, step2: ConfigStepType) => {
+    if (!step1.serial || !step2.serial) return 0;
+
+    return step1.serial - step2.serial;
+  };
+
+  const sortedSteps = [...steps].sort(stepSort);
+
   return (
     <>
       <ConfigureStyleComponent />
@@ -337,9 +345,9 @@ const ConfigComponent = ({ steps }: { steps: ConfigStepType[] }) => {
           data-testid="config-component"
           className={`${STYLE_CLASS_PREFIX}_config-component`}
         >
-          {!steps?.length
+          {![...sortedSteps]?.length
             ? "no steps"
-            : steps.map((step, index) => {
+            : [...sortedSteps].map((step, index) => {
                 return (
                   <ConfigureStep key={index} stepId={index + 1}>
                     <StepHeading heading={step.heading} />
