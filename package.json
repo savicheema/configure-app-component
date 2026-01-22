@@ -8,7 +8,8 @@
     "service",
     "worker",
     "notifications",
-    "push"
+    "push",
+    "setup"
   ],
   "homepage": "https://github.com/savicheema/configure-app-component#readme",
   "bugs": {
