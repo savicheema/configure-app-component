@@ -35,7 +35,7 @@
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@parcel/packager-ts": "^2.16.0",
-    "@parcel/transformer-typescript-types": "^2.16.0",
+    "@parcel/transformer-typescript-types": "^2.16.3",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",
     "@vitest/browser": "^3.2.4",
