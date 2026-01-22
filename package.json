@@ -1,6 +1,6 @@
 {
   "name": "@savicheema/configure-app-component",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Configure app component for PWAs to setup for client's use cases.",
   "keywords": [
     "configure",
