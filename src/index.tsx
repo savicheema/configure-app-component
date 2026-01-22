@@ -25,7 +25,7 @@ const ConfigureStepsContext = React.createContext<ConfigureContextType>({
 
 const useConfigureStepsHook = () => {
   const configureState = React.useContext<ConfigureContextType>(
-    ConfigureStepsContext
+    ConfigureStepsContext,
   );
 
   React.useEffect(() => {
@@ -164,7 +164,7 @@ const ActionBar = ({
   onPrev,
   isSkip,
 }: {
-  onNext?: () => boolean;
+  onNext?: () => boolean | Promise<boolean>;
   onPrev?: () => boolean;
   isSkip?: boolean;
 }) => {
@@ -188,7 +188,7 @@ const ActionBar = ({
               const isComplete = !!onPrev ? onPrev() : true;
               if (isComplete) {
                 configureState.setCurrentStep(
-                  prevState(configureState.configureStepsRef)
+                  prevState(configureState.configureStepsRef),
                 );
               }
             }}
@@ -199,8 +199,8 @@ const ActionBar = ({
         <button
           type="button"
           className={`${STYLE_CLASS_PREFIX}_action-button ${STYLE_CLASS_PREFIX}_next-button`}
-          onClick={() => {
-            const isNext = !!onNext ? onNext() : true;
+          onClick={async () => {
+            const isNext = !!onNext ? await onNext() : true;
             if (isNext) {
               if (
                 configureState.currentStep ===
@@ -209,7 +209,7 @@ const ActionBar = ({
                 configureState.setIsComplete(true);
               } else {
                 configureState.setCurrentStep(
-                  nextState(configureState.configureStepsRef)
+                  nextState(configureState.configureStepsRef),
                 );
               }
             }
