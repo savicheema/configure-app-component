@@ -1,6 +1,6 @@
 {
   "name": "@savicheema/configure-app-component",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "Configure app component for PWAs to setup for client's use cases.",
   "keywords": [
     "configure",
@@ -22,9 +22,15 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "dist/index.mjs",
-  "source": "src/index.tsx",
-  "types": "dist/types.d.ts",
+  "main": "./dist/index.mjs",
+  "source": "./src/index.tsx",
+  "types": "./dist/types.d.ts",
+  "exports": [
+    "./dist/index.mjs"
+  ],
+  "files": [
+    "./dist"
+  ],
   "scripts": {
     "watch": "parcel watch",
     "build": "rimraf dist && parcel build",
