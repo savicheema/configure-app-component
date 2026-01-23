@@ -1,6 +1,6 @@
 {
   "name": "@savicheema/configure-app-component",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "Configure app component for PWAs to setup for client's use cases.",
   "keywords": [
     "configure",
@@ -25,6 +25,7 @@
   "main": "./dist/index.mjs",
   "source": "./src/index.tsx",
   "types": "./dist/types.d.ts",
+  "module": "./dist/index.mjs",
   "exports": [
     "./dist/index.mjs"
   ],
